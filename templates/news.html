@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo1.png" sizes="512x512">
+    <title>news</title>
+    <style>
+       body{
+    background-color:#072f6b;
+        }
+        .Gaming_News{
+            color: aliceblue;
+            font-size: 250%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            
+        }
+        hr {
+    border: none;
+    height: 2px;
+    background-color: rgb(247, 244, 244);
+    margin: 10px 0;
+        }
+      .games{
+    color:aliceblue;
+    margin-bottom: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    font-weight: bold;
+        }
+        .logo img {
+            width: 5%; /* Adjust logo size */
+            height: auto;
+            float: right;
+            display: flex;
+            margin-top:-4.5%;
+        }
+        .archive{
+            color: aliceblue;
+            font-size: 250%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+        }
+        .archive_news{
+    color:aliceblue;
+    margin-bottom: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    font-weight: bold;
+        }
+        .trending{
+            color: aliceblue;
+            font-size: 250%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+        }
+        .trending_news{
+            color:aliceblue;
+    margin-bottom: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    font-weight: bold;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logo1.png" alt="Logo">
+  </div>
+
+  <!-- Dropdown-style links (looks like nav) -->
+  <ul class="detail">
+    <li onclick="showNewsSection('latest')">Latest</li>
+    <li onclick="showNewsSection('trending')">Trending</li>
+    <li onclick="showNewsSection('archives')">Archives</li>
+  </ul>
+
+  <!-- Latest -->
+  <div id="latest" class="news-section" style="display: block;">
+    <div class="Gaming_News">Latest News</div>
+    <hr>
+    <div class="games">Fortnite: Added Scorpion, Kitana, and Raiden from Mortal Kombat, plus a new 1v1 "Kombate Klásico" mode (March 29, 2025).</div>
+    <div class="games">GTA VI: Rockstar collaborating with creators (like Roblox & Fortnite) to bring user-generated content.</div>
+    <div class="games">Call of Duty: "Firing Range" map returns in Black Ops 6 (April 2), plus an anti-cheat update for Season 3.</div>
+    <div class="games">PUBG: Partnering with "It's Boba Time" for exclusive in-game drinks & rewards in April.</div>
+    <div class="games">Valorant: Smite 2.0 skins launching soon; Valorant Mobile rumored for April/May 2025.</div>
+    <div class="games">Among Us: Yakuza crossover with skins & content (March 26 - June 24, 2025).</div>
+    <div class="games">Apex Legends: April Fools' event incoming; midseason update buffs Skirmishers.</div>
+  </div>
+
+  <!-- Archives -->
+  <div id="archives" class="news-section">
+    <div class="archive">Archives</div>
+    <hr>
+    <div class="archive_news">A Mortal Kombat crossover is now live in Fortnite, bringing Scorpion, Kitana & Raiden skins along with a new "Kombate Klásico" mode.</div>
+    <div class="archive_news">Fans are excited as GTA VI is rumored to get a new gameplay trailer in early 2025.</div>
+    <div class="archive_news">The classic "Firing Range" map is making a return in Call of Duty: Black Ops 6.</div>
+    <div class="archive_news">A Cyber Royale mode launched in PUBG Mobile, introducing a futuristic battle experience.</div>
+    <div class="archive_news">Beta signups for Valorant Mobile expected in May 2025.</div>
+  </div>
+
+  <!-- Trending -->
+  <div id="trending" class="news-section">
+    <div class="trending">Trending</div>
+    <hr>
+    <div class="trending_news">GTA VI is expected to break records in 2025, with $3 billion in first-year sales.</div>
+    <div class="trending_news">GTA 6, Elden Ring: Nightreign, Death Stranding 2, and Switch 2 will be released in 2025!</div>
+  </div>
+
+  <script>
+    function showNewsSection(category) {
+      const sections = document.getElementsByClassName("news-section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+      }
+      document.getElementById(category).style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+    

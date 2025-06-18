@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>games</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo1.png') }}" sizes="512x512">
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 30px;
+        }
+
+        /* Logo Styling */
+        .logo img {
+            width: 25%; /* Adjust logo size */
+            height: auto;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgb(8, 8, 8);
+            font-size: 18px;
+            padding: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f1e8e1;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #4568b6;
+            display: none;
+            flex-direction: column;
+            min-width: 150px;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown a {
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .dropdown a:hover {
+            background: #6cbcc7;
+            color: white;
+        }
+
+        /* Show Dropdown on Hover */
+        .nav-links li:hover .dropdown {
+            display: flex;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #072f6b;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .game-card {
+            background: rgb(241, 241, 243);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .game-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #ddd;
+        }
+        .game-card a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .game-card a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+       
+        <div class="logo">
+            <img src="logo1.png" alt="Logo">
+        </div>
+        
+        <ul class="nav-links">
+            <li>
+        <a href="{{ url_for('games') }}">Back to Games</a>
+        <div class="dropdown">
+            <li><a href="{{ url_for('news', category='latest') }}">Latest</a></li>
+            <li><a href="{{ url_for('news', category='trending') }}">Trending</a></li>
+            <li><a href="{{ url_for('news', category='archives') }}">Archives</a></li>
+        </div>
+    </li>
+            <li>
+                <a href="#">Details</a>
+                <div class="dropdown">
+                    <!-- games.html dropdown example -->
+<li><a href="{{ url_for('news') }}">News</a></li>
+<li><a href="{{ url_for('services') }}">Services</a></li>
+<li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+<li><a href="{{ url_for('email') }}">Email</a></li>
+<li><a href="{{ url_for('phone') }}">Phone</a></li>
+
+
+                </div>
+            </li>
+            <li>
+                <a href="tel:4155550132">Contact</a>
+                <div class="dropdown">
+                <a href="mailto:rggamer19@gmail.com">Email</a>
+                <a href="tel:4155550132">Phone</a>
+                </div>
+
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/gta.webp') }}" alt="GTA">
+            <a href="https://www.rockstargames.com/gta-online">Play GTA Online</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/pubg.webp') }}" alt="PUBG">
+            <a href="https://pubg.com/">Play PUBG</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/free fire.png') }}" alt="Free Fire">
+            <a href="https://ff.garena.com/">Play Free Fire</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/amongus.jpg') }}" alt="Among Us">
+            <a href="https://innersloth.com/gameAmongUs.php">Play Among Us</a>
+        </div>
+        <div class="game-card">
+             <img src="{{ url_for('static', filename='pics/fortnite.jpg') }}" alt="Fortnite">
+            <a href="https://www.epicgames.com/fortnite/en-US/home">Play Fortnite</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/volarant.jpg') }}" alt="Valorant">
+            <a href="https://playvalorant.com/">Play Valorant</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/Apex Legends.jpg') }}" alt="Apex Legends">
+            <a href="https://www.ea.com/games/apex-legends">Play Apex Legends</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/minecraft.jpg') }}" alt="Minecraft">
+            <a href="https://www.minecraft.net/">Play Minecraft</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/roblox.webp') }}" alt="Roblox">
+            <a href="https://www.roblox.com/">Play Roblox</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/csgo.jpg') }}" alt="CS:GO">
+            <a href="https://blog.counter-strike.net/">Play CS:GO</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/callofduty.png') }}" alt="Call of Duty">
+            <a href="https://www.callofduty.com/">Play Call of Duty</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/leagueoflegends.jpg') }}" alt="League of Legends">
+            <a href="https://www.leagueoflegends.com/">Play League of Legends</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/dota2.jpg') }}" alt="Dota 2">
+            <a href="https://www.dota2.com/">Play Dota 2</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/fallguys.jpg') }}" alt="Fall Guys">
+            <a href="https://www.fallguys.com/">Play Fall Guys</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/rocketleague.jpg') }}" alt="Rocket League">
+            <a href="https://www.rocketleague.com/">Play Rocket League</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/genshinimpact.jpg') }}" alt="Genshin Impact">
+            <a href="https://genshin.hoyoverse.com/">Play Genshin Impact</a>
+        </div>
+        <div class="game-card">
+            <img src="{{ url_for('static', filename='pics/warframe.webp') }}" alt="Warframe">
+            <a href="https://www.warframe.com/">Play Warframe</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGgamers</title>
+    <link rel="icon" type="image/png" href="logo1.png" sizes="512x512">
+   
+</head>
+<style>
+    img{
+        width: 100vw;
+        height:100vh;
+    }
+    a{
+display: grid;
+position: absolute;
+  top: 50%;
+  left: 30%;
+  font-size: larger;
+  color: rgb(3, 3, 3);
+  padding:2%;
+  border: 3px solid rgb(87, 155, 214);
+  border-radius: 30%;
+  background-color: aliceblue;
+  font-weight: bold;
+  
+    }
+    .RGgamers{
+position: absolute;
+color: aliceblue;
+font-size:500%;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+animation: fadeInTop 3s ease-in-out;
+    }
+
+.quote{
+  position: absolute;
+  top:30%;
+  color:rgb(95, 214, 235);
+  font-size: large;
+
+        
+    }
+    @keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    color: rgba(126, 236, 23, 0.856);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+<body>
+    <div class="login">
+        <div class="RGgamers">RGgamers</div>
+        <div class="quote">
+            Push your limits, master the game, and leave your mark in the world of gaming!
+        </div>
+        <img src="{{ url_for('static', filename='pics/back-ground image.jpg') }}" alt="">
+
+        <a href="{{ url_for('signup') }}">Get Explore</a>
+    </div>     
+</body>
+</html>
+
+</html>
